@@ -1,7 +1,7 @@
 import React from 'react';
 import { Jumbotron } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTwitter, faLinkedin, faGithub, faMicrosoft } from '@fortawesome/free-brands-svg-icons';
+import { faTwitter, faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 const Home = () => {
