@@ -5,7 +5,8 @@ const API_URL           = "https://hecked-blog.herokuapp.com";
 export async function getPosts(limit, page) {
     try {
         const response = await fetch(`${API_URL}/ghost/api/v3/content/posts/?key=${CONTENT_API_KEY}&` +
-            `fields=id,title,slug,custom_excerpt,reading_time,feature_image,meta&limit=${limit}&page=${page}`);
+            `fields=id,title,slug,custom_excerpt,reading_time,feature_image,`+
+            `created_at,updated_at,published_at,meta&include=tags&limit=${limit}&page=${page}`);
         return await response.json();
     } catch (error) {
         return [];
