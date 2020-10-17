@@ -91,9 +91,9 @@ const Pagination = ({ pg, isLoading, onNextClick, onPreviousClick, onPageClick }
                 </>
                 :
                 <>
-                    <Pg.Prev disabled={isLoading} onClick={()=>{onPreviousClick()}} />
+                    <Pg.Prev disabled={isLoading || pg.page === 1} onClick={()=>{onPreviousClick()}} />
                         {getPages(pg, onPageClick, isLoading)}
-                    <Pg.Next disabled={isLoading} onClick={()=>{onNextClick()}}/>
+                    <Pg.Next disabled={isLoading || pg.pages === pg.page} onClick={()=>{onNextClick()}}/>
                 </>}
             </>
             :
