@@ -2,7 +2,7 @@ import React from 'react';
 
 const Portfolio = () => {
     return (
-        <span>Portfolio</span>
+        <span>Under Construction.</span>
     )
 };
 
