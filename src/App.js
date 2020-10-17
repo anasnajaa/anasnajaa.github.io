@@ -11,7 +11,7 @@ import Blog from "./components/Blog/index";
 import Portfolio from "./components/Portfolio/index";
 import Home from "./components/Home/index";
 import PageNotFound from './components/PageNotFound/index';
-import NavigationBar from './components/NavigationBar';
+import NavigationBar from './components/NavBar';
 
 const App = () => (
   <Router>
