@@ -19,7 +19,6 @@ class BlogPosts extends React.Component {
   async getBlogPosts() {
     try {
       const response =  await getPosts(5, this.state.currentPage);
-      console.log(response);
       this.setState({
         error: null,
         isLoaded: true,
@@ -50,7 +49,11 @@ class BlogPosts extends React.Component {
   render() {
     if (this.state.error) {
       return (
-        <div>Error: {this.state.error.message}</div>
+        <Row>
+          <Col className="text-center">
+          <div>Error: {this.state.error.message}</div>
+          </Col>
+        </Row>
       );
     } else if (!this.state.isLoaded) {
       return (
