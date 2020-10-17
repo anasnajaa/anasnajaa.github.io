@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom';
 import App from './App';
 
 ReactDOM.render(
-  <React.StrictMode>
+  //<React.StrictMode> temporary fix for bootstrap warnings
     <App />
-  </React.StrictMode>,
+  //</React.StrictMode>
+  ,
   document.getElementById('root')
 );
