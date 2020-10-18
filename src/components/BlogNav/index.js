@@ -1,6 +1,6 @@
 import React from "react";
 import { Row, Col, Nav } from "react-bootstrap";
-import { IndexLinkContainer } from "react-router-bootstrap";
+import { IndexLinkContainer, LinkContainer } from "react-router-bootstrap";
 import { useRouteMatch } from "react-router-dom";
 
 const BlogNav = () => {
@@ -16,14 +16,14 @@ const BlogNav = () => {
               </IndexLinkContainer>
             </Nav.Item>
             <Nav.Item>
-              <IndexLinkContainer to={`${path}/archive`}>
+              <LinkContainer to={`${path}/archive`}>
                 <Nav.Link>Archive</Nav.Link>
-              </IndexLinkContainer>
+              </LinkContainer>
             </Nav.Item>
             <Nav.Item>
-              <IndexLinkContainer to={`${path}/topics`}>
+              <LinkContainer to={`${path}/topics`}>
                 <Nav.Link>Topics</Nav.Link>
-              </IndexLinkContainer>
+              </LinkContainer>
             </Nav.Item>
           </Nav>
         </Col>
