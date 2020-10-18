@@ -3,7 +3,6 @@ import { ListGroup, Row, Col, Badge } from "react-bootstrap";
 import { getTags } from "../../api/blog";
 import Loading from "../Loading/index";
 import { LinkContainer } from "react-router-bootstrap";
-import { v4 } from "uuid";
 
 const BlogTopics = () => {
   const [tags, setTags] = useState([]);
