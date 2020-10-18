@@ -3,7 +3,7 @@ import { getArchivePosts } from "../../api/blog";
 import { Row, Col, Table, Form } from "react-bootstrap";
 import Loading from "../Loading/index";
 import { v4 } from "uuid";
-import { IndexLinkContainer } from "react-router-bootstrap";
+import { LinkContainer } from "react-router-bootstrap";
 import ReactMoment from 'react-moment';
 import Moment from 'moment';
 
@@ -28,17 +28,12 @@ class BlogPostsArchive extends React.Component {
         isLoaded: true,
         posts: [...response.posts],
         filteredPosts: [...response.posts]
-      }, ()=>{
-        console.log(response);
-        return response.posts;
-      });
+      }, ()=>{ return response.posts; });
     } catch (error) {
       this.setState({
         error: error,
         isLoaded: true
-      }, ()=>{
-        return [];
-      });
+      }, ()=>{ return []; });
     }
   }
 
@@ -57,9 +52,9 @@ class BlogPostsArchive extends React.Component {
             <ReactMoment date={published_at} format="DD" />
             </td>
             <td>
-            <IndexLinkContainer key={v4()} to={`/blog/posts/${slug}`}>
-                <span>{title}</span>
-            </IndexLinkContainer>
+            <LinkContainer key={v4()} to={`/blog/posts/${slug}`}>
+                <a href={`/blog/posts/${slug}`}>{title}</a>
+            </LinkContainer>
             </td>
         </tr>
       );
@@ -75,7 +70,7 @@ class BlogPostsArchive extends React.Component {
       const postMonth = datePublished.month();
       const postYear = datePublished.year();
 
-      if (post.title.indexOf(this.state.searchText) === -1) return;
+      if (post.title.toLowerCase().indexOf(this.state.searchText.toLowerCase()) === -1) return;
 
       if (postMonth !== currentMonth || postYear !== currentYear) {
         currentMonth = postMonth;
@@ -120,7 +115,18 @@ class BlogPostsArchive extends React.Component {
           <Col xs={12}>
           <Form>
             <Form.Group controlId="formBasicEmail">
-              <Form.Control type="email" placeholder="Search by Title" />
+              <Form.Control 
+              type="text" 
+              placeholder="Filter by Title" 
+              value={this.state.searchText}
+              onChange={(e)=>{
+                this.setState({
+                  searchText: e.target.value
+                }, ()=>{
+                  this.populatePostsList();
+                });
+              }}
+              />
             </Form.Group>
             </Form>
           </Col>
