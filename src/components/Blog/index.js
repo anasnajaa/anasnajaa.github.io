@@ -1,7 +1,6 @@
 import React from "react";
 import { Switch, Route, useRouteMatch } from "react-router-dom";
 
-import BlogPostBySlug from "../BlogPostBySlug/index";
 import BlogPosts from "../BlogPosts/index";
 import { Container, Row, Col } from "react-bootstrap";
 import BlogPostsArchive from "../BlogPostsArchive/index";
@@ -17,9 +16,6 @@ function Blog() {
         <Col>
           <BlogNav/>
           <Switch>
-            <Route path={`${path}/post/:slug`}>
-              <BlogPostBySlug />
-            </Route>
             <Route path={`${path}/archive`}>
               <BlogPostsArchive />
             </Route>
