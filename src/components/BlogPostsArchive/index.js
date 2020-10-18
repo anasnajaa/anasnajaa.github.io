@@ -52,8 +52,8 @@ class BlogPostsArchive extends React.Component {
             <ReactMoment date={published_at} format="DD" />
             </td>
             <td>
-            <LinkContainer key={v4()} to={`/blog/posts/${slug}`}>
-                <a href={`/blog/posts/${slug}`}>{title}</a>
+            <LinkContainer className="cursor-pointer" key={v4()} to={`/blog/posts/${slug}`}>
+                <span>{title}</span>
             </LinkContainer>
             </td>
         </tr>
