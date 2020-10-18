@@ -23,7 +23,7 @@ export async function getArchivePosts() {
     }
 }
 
-export async function getPost(slug) {
+export async function getPostBySlug(slug) {
     try {
         const response = await fetch(`${API_URL}/posts/slug/${slug}?${KEY}&` +
             "fields=id,title,slug,html,reading_time,feature_image,created_at,updated_at,published_at");
