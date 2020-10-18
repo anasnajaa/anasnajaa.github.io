@@ -2,11 +2,12 @@ const API_KEY   = "9c8569eb29d07e9f4b3819310d"; //for public content only
 const API_URL   = "https://hecked-blog.herokuapp.com/ghost/api/v3/content";
 const KEY       = `key=${API_KEY}`
 
-export async function getPosts(limit, page) {
+export async function getPosts(limit, page, topic) {
     try {
         const response = await fetch(`${API_URL}/posts/?${KEY}&` +
             `fields=id,title,slug,custom_excerpt,reading_time,feature_image,`+
-            `created_at,updated_at,published_at,meta&include=tags&limit=${limit}&page=${page}`);
+            `created_at,updated_at,published_at,meta&include=tags&limit=${limit}&page=${page}&`+
+            `${topic ? `filter=tag:${topic}`:""}`);
         return await response.json();
     } catch (error) {
         return [];
@@ -46,8 +47,8 @@ export async function getSettings() {
 
 export async function getTags() {
     try {
-        const response = await fetch(`${API_URL}/tags/?${KEY}&&` +
-        `include=count.posts&limit=20&filter=visibility:public`);
+        const response = await fetch(`${API_URL}/tags/?${KEY}&` +
+        `&include=count.posts&limit=all&filter=visibility:public`);
         const body = await response.json();
         return body;
     } catch (error) {
