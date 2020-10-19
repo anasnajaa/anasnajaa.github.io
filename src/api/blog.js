@@ -26,7 +26,7 @@ export async function getArchivePosts() {
 
 export async function getPostBySlug(slug) {
     try {
-        const response = await fetch(`${API_URL}/posts/slug/${slug}?${KEY}&` +
+        const response = await fetch(`${API_URL}/posts/slug/${slug}?${KEY}&include=tags&` +
             "fields=id,title,slug,html,reading_time,feature_image,created_at,updated_at,published_at");
         const body = await response.json();
         return body.posts[0];
