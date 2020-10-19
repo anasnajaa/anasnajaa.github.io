@@ -1,34 +1,33 @@
 import React from "react";
 import { Row, Col, Nav } from "react-bootstrap";
-import { IndexLinkContainer, LinkContainer } from "react-router-bootstrap";
-import { useRouteMatch } from "react-router-dom";
+import { IndexLinkContainer } from "react-router-bootstrap";
+import { useMediaQuery } from 'react-responsive';
 
 const BlogNav = () => {
-  let { path } = useRouteMatch();
+  //let { path } = useRouteMatch();
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
   return (
-    <>
-      <Row className="mb-3">
-        <Col>
-          <Nav variant="pills" defaultActiveKey={path}>
+    <Row>
+        <Col xs={12} className="mb-3">
+          <Nav className={isTabletOrMobile?"":"flex-column"} >
             <Nav.Item>
-              <IndexLinkContainer to={path}>
+              <IndexLinkContainer to={`/blog`}>
                 <Nav.Link>Blog</Nav.Link>
               </IndexLinkContainer>
             </Nav.Item>
             <Nav.Item>
-              <LinkContainer to={`${path}/archive`}>
-                <Nav.Link>Archive</Nav.Link>
-              </LinkContainer>
+              <IndexLinkContainer to={`/blog/topics`}>
+                <Nav.Link>Topics</Nav.Link>
+              </IndexLinkContainer>
             </Nav.Item>
             <Nav.Item>
-              <LinkContainer to={`${path}/topics`}>
-                <Nav.Link>Topics</Nav.Link>
-              </LinkContainer>
+              <IndexLinkContainer to={`/blog/archive`}>
+                <Nav.Link>Archive</Nav.Link>
+              </IndexLinkContainer>
             </Nav.Item>
           </Nav>
         </Col>
-      </Row>
-    </>
+    </Row>
   );
 };
 
