@@ -13,7 +13,6 @@ const BlogTopics = () => {
     try {
       const response = await getTags();
       setTags(response.tags);
-      console.log(response);
     } catch (error) {
       setError(error);
     } finally {
