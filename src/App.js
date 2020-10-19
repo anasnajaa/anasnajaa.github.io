@@ -12,17 +12,13 @@ import Portfolio from "./components/Portfolio/index";
 import Home from "./components/Home/index";
 import PageNotFound from './components/PageNotFound/index';
 import NavigationBar from './components/NavBar';
-import BlogPostBySlug from "./components/BlogPostBySlug/index";
 
 const App = () => (
   <Router>
     <NavigationBar/>
-    <Container className="p-3">
+    <Container className="p-3 mt-5">
       <Switch>
         <Route exact path="/"><Home /></Route>
-        <Route path={`/blog/posts/:slug`}>
-              <BlogPostBySlug />
-        </Route>
         <Route path="/blog"><Blog /></Route>
         <Route path="/portfolio"><Portfolio /></Route>
         <Route path="*">
