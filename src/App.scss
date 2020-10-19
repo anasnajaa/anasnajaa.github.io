@@ -3,6 +3,40 @@ $theme-colors: (
     "danger": teal
 );
 
+html,
+body {
+  font-family: CourierPrime, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: whitesmoke!important;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+.font-sans {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.font-serif {
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+.font-mono {
+  font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+
 .cursor-pointer {
     cursor: pointer;
 }
