@@ -82,6 +82,7 @@ const BlogPostsArchive = ()=> {
 
   useEffect(()=>{
     populatePostsList();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [posts, searchText]);
 
   if (error) {
