@@ -19,6 +19,9 @@ const NavigationBar = () => (
           <LinkContainer to="/blog">
             <Nav.Link>Blog</Nav.Link>
           </LinkContainer>
+          <LinkContainer to="/services">
+            <Nav.Link>Services</Nav.Link>
+          </LinkContainer>
           <LinkContainer to="/portfolio">
             <Nav.Link>Portfolio</Nav.Link>
           </LinkContainer>
