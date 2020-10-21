@@ -1,57 +1,56 @@
 const API_KEY   = "9c8569eb29d07e9f4b3819310d"; //for public content only
 const API_URL   = "https://hecked-blog.herokuapp.com/ghost/api/v3/content";
 const KEY       = `key=${API_KEY}`
+const ERRMSG    = `Data retrival failed for endpoint:`;
 
-export async function getPosts(limit, page, topic) {
-    try {
-        const response = await fetch(`${API_URL}/posts/?${KEY}&` +
-            `fields=id,title,slug,custom_excerpt,reading_time,feature_image,`+
-            `created_at,updated_at,published_at,meta&include=tags&limit=${limit}&page=${page}&`+
-            `${topic ? `filter=tag:${topic}`:""}`);
+export const getPosts = async (limit, page, topic) => {
+    const response = await fetch(`${API_URL}/posts/?${KEY}&` +
+    `fields=id,title,slug,custom_excerpt,reading_time,feature_image,`+
+    `created_at,updated_at,published_at,meta&include=tags&limit=${limit}&page=${page}&`+
+    `${topic ? `filter=tag:${topic}`:""}`);
+    if(response.ok){
         return await response.json();
-    } catch (error) {
-        return [];
+    } else {
+        throw Error(`${ERRMSG} getPosts`);
     }
 }
 
-export async function getArchivePosts() {
-    try {
-        const response = await fetch(`${API_URL}/posts/?${KEY}&` +
-            `fields=id,title,slug,published_at,tags.id&limit=all`);
+export const getArchivePosts = async () => {
+    const response = await fetch(`${API_URL}/posts/?${KEY}&` +
+    `fields=id,title,slug,published_at,tags.id&limit=all`);
+    if(response.ok){
         return await response.json();
-    } catch (error) {
-        return [];
+    } else {
+        throw Error(`${ERRMSG} getArchivePosts`);
     }
 }
 
-export async function getPostBySlug(slug) {
-    try {
-        const response = await fetch(`${API_URL}/posts/slug/${slug}?${KEY}&include=tags&` +
-            "fields=id,title,slug,html,reading_time,feature_image,created_at,updated_at,published_at");
+export const getPostBySlug = async (slug) => {
+    const response = await fetch(`${API_URL}/posts/slug/${slug}?${KEY}&include=tags&` +
+    "fields=id,title,slug,html,reading_time,feature_image,created_at,updated_at,published_at");
+    if(response.ok){
         const body = await response.json();
         return body.posts[0];
-    } catch (error) {
-        return [];
+    } else {
+        throw Error(`${ERRMSG} getPostBySlug`);
     }
 }
 
-export async function getSettings() {
-    try {
-        const response = await fetch(`${API_URL}/settings/?${KEY}`);
-        const body = await response.json();
-        return body;
-    } catch (error) {
-        return [];
+export const getSettings = async () => {
+    const response = await fetch(`${API_URL}/settings/?${KEY}`);
+    if(response.ok){
+        return await response.json();
+    } else {
+        throw Error(`${ERRMSG} getSettings`);
     }
 }
 
-export async function getTags() {
-    try {
-        const response = await fetch(`${API_URL}/tags/?${KEY}&` +
-        `&include=count.posts&limit=all&filter=visibility:public`);
-        const body = await response.json();
-        return body;
-    } catch (error) {
-        return [];
+export const getTags = async () => {
+    const response = await fetch(`${API_URL}/tags/?${KEY}&` +
+    `&include=count.posts&limit=all&filter=visibility:public`);
+    if(response.ok){
+        return await response.json();
+    } else {
+        throw Error(`${ERRMSG} getTags`);
     }
 }
