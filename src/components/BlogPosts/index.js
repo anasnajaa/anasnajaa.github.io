@@ -59,16 +59,13 @@ const BlogPosts = ({ topic, history }) => {
     setIsLoaded(false);
   };
 
-  useEffect(
-    () =>
+  useEffect(() =>
       history.listen(() => {
         const params = getQueryParams(history);
         //const params =  qs.parse(history.location.search, { ignoreQueryPrefix: true });
         updateCurrentPage(params.p);
         // eslint-disable-next-line react-hooks/exhaustive-deps
-      }),
-    []
-  );
+      }),[] );
 
   useEffect(() => {
     getBlogPosts(currentPage, topic);
