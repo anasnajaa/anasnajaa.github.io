@@ -19,7 +19,7 @@ const BlogPostsArchive = ()=> {
     try {
       const response = await getArchivePosts();
       setError(null);
-      setPosts([...response.posts]);
+      setPosts(response.posts);
       return response.posts;
     } catch (error) {
       setError(error);
@@ -72,21 +72,17 @@ const BlogPostsArchive = ()=> {
       }
       elementsList.push(postElement(post));
     });
-    console.log(posts);
     setPostsElements([...elementsList]);
   }
 
   useEffect(()=>{
-    const load = async () =>{
-      await getBlogPosts();
-      populatePostsList();
-    }
-    load();
+    getBlogPosts();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(()=>{
-    //populatePostsList();
-  }, [searchText]);
+    populatePostsList();
+  }, [posts, searchText]);
 
   if (error) {
     return (
