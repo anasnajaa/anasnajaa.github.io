@@ -54,3 +54,14 @@ export const getTags = async () => {
         throw Error(`${ERRMSG} getTags`);
     }
 }
+
+export const getPageData = async (internalTag) => {
+    const response = await fetch(`${API_URL}/pages/?${KEY}&` +
+    `fields=id,title,html,`+
+    `updated_at,published_at&limit=all&filter=tag:${internalTag}&filter=visibility:internal`);
+    if(response.ok){
+        return await response.json();
+    } else {
+        throw Error(`${ERRMSG} getPageData`);
+    }
+}
