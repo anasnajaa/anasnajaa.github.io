@@ -55,7 +55,8 @@ const BlogTopics = () => {
               >
                 <ListGroup.Item>
                   {name}&nbsp;&nbsp;
-                  <Badge variant="light">{count.posts}</Badge>
+                  <Badge variant="light">{count.posts}</Badge><br/>
+                    <small>{description}</small>
                 </ListGroup.Item>
               </LinkContainer>
             );
