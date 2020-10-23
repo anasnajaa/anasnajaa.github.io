@@ -4,6 +4,8 @@ import Loading from "../Loading/index";
 import Alert from "../Alert/index";
 import { getPageData } from "../../api/blog";
 import { parseServicePage } from '../PagesMapping/index';
+import FormPlaceRequest from '../FormPlaceRequest/index';
+
 const Services = () => {
   
   const [error, setError] = useState(null);
@@ -86,6 +88,7 @@ const Services = () => {
         </Col>
           <Col xs="12" sm="12" md="12" xl="6" lg="6">
             <h4>Place a request</h4>
+            <FormPlaceRequest />
           </Col>
         </Row>
       </Col>
