@@ -79,7 +79,7 @@ const Services = () => {
       <Col xs="12">
         <Row>
         <Col xs="12" sm="12" md="12" xl="6" lg="6">
-          <h4>Services I provide</h4>
+          <h4>Services</h4>
           <Accordion defaultActiveKey={servicesCards[0].id}>
             {servicesCards.map((card) => {
               return <ServiceElement key={card.id} card={card} />
