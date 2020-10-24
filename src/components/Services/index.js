@@ -35,7 +35,6 @@ const Services = () => {
       const response = await getPageData("services-page");
       const pageContent = parseServicePage(response.pages);
       setHeaderCardContent(pageContent.headerCard);
-      console.log(pageContent.services);
       setServicesCards(pageContent.services);
     } catch (error) {
       setError(error);
