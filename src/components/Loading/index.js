@@ -1,12 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Spinner } from 'react-bootstrap';
 
 const Loading = () => {
+    const [isMounted, setIsMounted] = useState(false);
     const [isRequestColdBoot, setIsRequestColdBoot] = useState(false);
 
     setTimeout(() => {
-        setIsRequestColdBoot(true)
+        if(isMounted){
+            setIsRequestColdBoot(true);
+        }
     }, 1200);
+
+    useEffect(() => {
+        return () => {
+            setIsMounted(false);
+        };
+    }, []);
 
     return (
         <span>
