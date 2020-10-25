@@ -4,7 +4,6 @@ import Loading from "../Loading/index";
 import Alert from "../Alert/index";
 import { getPageData } from "../../api/blog";
 import { parseServicePage } from '../PagesMapping/index';
-import FormPlaceRequest from '../FormPlaceRequest/index';
 
 const Services = () => {
   
@@ -24,6 +23,9 @@ const Services = () => {
           <Accordion.Collapse eventKey={card.id}>
             <Card.Body>
             <div dangerouslySetInnerHTML={{ __html: card.html }} />
+            <hr/>
+            <Button className="mr-2" variant="primary">Place a request</Button>
+            <Button variant="success">FAQs</Button>
             </Card.Body>
           </Accordion.Collapse>
         </Card>
@@ -76,20 +78,12 @@ const Services = () => {
         </Jumbotron>
       </Col>
       <Col xs="12">
-        <Row>
-        <Col xs="12" sm="12" md="12" xl="6" lg="6">
-          <h4>Services</h4>
+        <h4>Services</h4>
           <Accordion defaultActiveKey={servicesCards[0].id}>
             {servicesCards.map((card) => {
               return <ServiceElement key={card.id} card={card} />
             })}
           </Accordion>
-        </Col>
-          <Col xs="12" sm="12" md="12" xl="6" lg="6">
-            <h4>Place a request</h4>
-            <FormPlaceRequest />
-          </Col>
-        </Row>
       </Col>
     </Row>
   );

@@ -28,7 +28,7 @@ export default () => {
       <Form.Group controlId="exampleForm.ControlSelect1">
         <Form.Label>Service Required</Form.Label>
         <Form.Control as="select">
-          <option>Project Development</option>
+          <option>Web / App Development</option>
           <option>General IT Support</option>
           <option>Programming Training</option>
         </Form.Control>
