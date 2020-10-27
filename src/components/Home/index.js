@@ -87,7 +87,7 @@ const Home = () => {
         )<br />
         API is powered by Node.js/MongoDB/Express/Postgres (
         <a
-          href="https://github.com/KumarAbhirup/personal-website"
+          href="https://github.com/anasnajaa/anasnajaa-api"
           target="_blank"
           rel="noopener noreferrer nofollow"
         >
