@@ -1,0 +1,33 @@
+.HomeComponent {
+    .jumbotron {
+        border-radius: 99999rem;
+        margin-top: 3rem;
+    }
+    .twitter{
+        text-decoration: none;
+        color: #1DA1F2;
+        font-size: 4rem;
+    }
+    .linkedin {
+        text-decoration: none;
+        color: #2867B2;
+        font-size: 4rem;
+    }
+    .github {
+        text-decoration: none;
+        color: #24292e;
+        font-size: 4rem;
+    }
+    footer {
+        text-align: center;
+        font-size: 13px;
+        padding: 80px 0;
+        a {
+            border-bottom: 1px black dashed;
+            text-decoration: none;
+            color: black;
+            font-size: 13px;
+        }
+    }
+
+}
