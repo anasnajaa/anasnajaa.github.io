@@ -55,13 +55,24 @@ export const getTags = async () => {
     }
 }
 
-export const getPageData = async (internalTag) => {
+export const getPagesByInternalTag = async (internalTag) => {
     const response = await fetch(`${API_URL}/pages/?${KEY}&` +
-    `fields=id,title,html,`+
+    `fields=id,title,html,feature_image,`+
     `updated_at,published_at&limit=all&filter=tag:${internalTag}&filter=visibility:internal`);
     if(response.ok){
         return await response.json();
     } else {
         throw Error(`${ERRMSG} getPageData`);
+    }
+}
+
+export const getPageBySlug = async (slug) => {
+    const response = await fetch(`${API_URL}/pages/slug/${slug}?${KEY}&` +
+    "fields=id,title,html,feature_image,created_at,updated_at,published_at");
+    if(response.ok){
+        const body = await response.json();
+        return body.pages[0];
+    } else {
+        throw Error(`${ERRMSG} getPageBySlug`);
     }
 }
