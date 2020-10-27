@@ -13,6 +13,7 @@ import Home from "./components/Home/index";
 import PageNotFound from './components/PageNotFound/index';
 import NavigationBar from './components/NavBar';
 import Services from './components/Services/index';
+import FormPlaceServiceRequest from './components/FormPlaceServiceRequest';
 
 const App = () => (
   <Router>
@@ -22,6 +23,7 @@ const App = () => (
         <Route exact path="/"><Home /></Route>
         <Route path="/blog"><Blog /></Route>
         <Route path="/portfolio"><Portfolio /></Route>
+        <Route path="/services/request"><FormPlaceServiceRequest /></Route>
         <Route path="/services"><Services /></Route>
         <Route path="*">
             <PageNotFound />
