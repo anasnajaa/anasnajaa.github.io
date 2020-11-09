@@ -14,9 +14,11 @@ import PageNotFound from './components/PageNotFound/index';
 import NavigationBar from './components/NavBar';
 import Services from './components/Services/index';
 import FormPlaceServiceRequest from './components/FormPlaceServiceRequest';
+import Meta from './components/Meta/index';
 
 const App = () => (
   <Router>
+    <Meta/>
     <NavigationBar/>
     <Container className="p-3 mt-5">
       <Switch>
