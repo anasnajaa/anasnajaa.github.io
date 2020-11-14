@@ -1,5 +1,5 @@
 # Summary
-A SPA built with React and uses Bootstrap.
+A SPA built with React and Bootstrap.
 
 # Backend
   - API: powered by Node.js,MongoDB,Express,Postgres and hosted on Heroku. [(Source Code)](https://github.com/anasnajaa/anasnajaa-api)
