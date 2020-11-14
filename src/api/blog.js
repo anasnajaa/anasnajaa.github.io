@@ -67,7 +67,7 @@ export const getPagesByInternalTag = async (internalTag) => {
 }
 
 export const getPageBySlug = async (slug) => {
-    const response = await fetch(`${API_URL}/pages/slug/${slug}?${KEY}&` +
+    const response = await fetch(`${API_URL}/pages/slug/${slug}/?${KEY}&` +
     "fields=id,title,html,feature_image,created_at,updated_at,published_at");
     if(response.ok){
         const body = await response.json();
