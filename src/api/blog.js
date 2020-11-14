@@ -26,7 +26,7 @@ export const getArchivePosts = async () => {
 }
 
 export const getPostBySlug = async (slug) => {
-    const response = await fetch(`${API_URL}/posts/slug/${slug}?${KEY}&include=tags&` +
+    const response = await fetch(`${API_URL}/posts/slug/${slug}/?${KEY}&include=tags&` +
     "fields=id,title,slug,html,reading_time,feature_image,created_at,updated_at,published_at");
     if(response.ok){
         const body = await response.json();
