@@ -39,6 +39,12 @@ const NavigationBar = () => {
             <LinkContainer to="/portfolio" onClick={handleHideMenu}>
               <Nav.Link>Portfolio</Nav.Link>
             </LinkContainer>
+            <LinkContainer to="/links" onClick={handleHideMenu}>
+              <Nav.Link>Links</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to="/books" onClick={handleHideMenu}>
+              <Nav.Link>Books</Nav.Link>
+            </LinkContainer>
           </Nav>
         </Navbar.Collapse>
       </Container>

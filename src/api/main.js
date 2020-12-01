@@ -13,3 +13,23 @@ export const submitServiceRequest = async (serviceRequestObject) => {
         throw Error(`${ERRMSG} submitServiceRequest`);
     }
 }
+
+export const getBooks = async () => {
+    const response = await fetch(`${API_URL}/books`, 
+    { method: "GET" });
+    if(response.ok){
+        return await response.json();
+    } else {
+        throw Error(`${ERRMSG} getBooks`);
+    }
+}
+
+export const getLinks = async () => {
+    const response = await fetch(`${API_URL}/links`, 
+    { method: "GET" });
+    if(response.ok){
+        return await response.json();
+    } else {
+        throw Error(`${ERRMSG} getLinks`);
+    }
+}

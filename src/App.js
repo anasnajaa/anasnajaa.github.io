@@ -13,6 +13,8 @@ import Home from "./components/Home/index";
 import PageNotFound from './components/PageNotFound/index';
 import NavigationBar from './components/NavBar';
 import Services from './components/Services/index';
+import Links from './components/Links/index';
+import Books from './components/Books/index';
 import FormPlaceServiceRequest from './components/FormPlaceServiceRequest';
 import Meta from './components/Meta/index';
 
@@ -27,6 +29,8 @@ const App = () => (
         <Route path="/portfolio"><Portfolio /></Route>
         <Route path="/services/request"><FormPlaceServiceRequest /></Route>
         <Route path="/services"><Services /></Route>
+        <Route path="/links"><Links /></Route>
+        <Route path="/books"><Books /></Route>
         <Route path="*">
             <PageNotFound />
         </Route>
