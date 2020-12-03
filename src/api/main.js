@@ -1,4 +1,5 @@
-const API_URL   = "http://localhost:5000/api/v1";
+const API_URL   = "https://anasnajaa-api.herokuapp.com/api/v1";
+//http://localhost:5000
 const ERRMSG    = `Data retrival failed for endpoint:`;
 
 export const submitServiceRequest = async (serviceRequestObject) => {
