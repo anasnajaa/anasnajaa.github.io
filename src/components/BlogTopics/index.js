@@ -27,7 +27,7 @@ const BlogTopics = () => {
   if (error) {
     return (
       <Row>
-        <Col>Error: {error}</Col>
+        <Col>Error: {error.message}</Col>
       </Row>
     );
   }
