@@ -7,7 +7,7 @@ import Moment from "react-moment";
 import { TagsBuilder } from "../TagsUtility/index";
 import Alert from '../Alert/index';
 import Prism from 'prismjs';
-import "./style.scss";
+import "./tomorrow.scss";
 
 const BlogPostBySlug = ({ match, location, history }) => {
   const [error, setError] = useState(null);
