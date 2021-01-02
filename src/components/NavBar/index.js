@@ -1,25 +1,25 @@
-import React, { useRef } from 'react';
-import { Navbar, Nav, Container } from 'react-bootstrap';
-import { IndexLinkContainer, LinkContainer } from 'react-router-bootstrap';
-import { useMediaQuery } from 'react-responsive';
+import React, { useRef } from "react";
+import { Navbar, Nav, Container } from "react-bootstrap";
+import { IndexLinkContainer, LinkContainer } from "react-router-bootstrap";
+import { useMediaQuery } from "react-responsive";
 
 const NavigationBar = () => {
-  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
   const navMenuToggle = useRef(null);
 
   const handleHideMenu = () => {
-    if(isTabletOrMobile) {
+    if (isTabletOrMobile) {
       navMenuToggle.current.dispatchEvent(
-        new MouseEvent('click', {
+        new MouseEvent("click", {
           view: window,
           bubbles: true,
           cancelable: true,
           buttons: 1,
-        }),
+        })
       );
     }
-  }
-  
+  };
+
   return (
     <Navbar className="fixed-top" bg="light" expand="lg">
       <Container>
@@ -45,11 +45,14 @@ const NavigationBar = () => {
             <LinkContainer to="/books" onClick={handleHideMenu}>
               <Nav.Link>Books</Nav.Link>
             </LinkContainer>
+            <LinkContainer to="/playground" onClick={handleHideMenu}>
+              <Nav.Link>Playground</Nav.Link>
+            </LinkContainer>
           </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
   );
-}
+};
 
 export default NavigationBar;
