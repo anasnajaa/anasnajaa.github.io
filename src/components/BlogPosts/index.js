@@ -59,13 +59,15 @@ const BlogPosts = ({ topic, history }) => {
     setIsLoaded(false);
   };
 
-  useEffect(() =>
+  useEffect(
+    () =>
       history.listen(() => {
         const params = getQueryParams(history);
-        //const params =  qs.parse(history.location.search, { ignoreQueryPrefix: true });
         updateCurrentPage(params.p);
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-      }),[] );
+      }),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    []
+  );
 
   useEffect(() => {
     getBlogPosts(currentPage, topic);
@@ -120,15 +122,12 @@ const BlogPosts = ({ topic, history }) => {
           pg={pagination}
           onNextClick={() => {
             history.push(buildUrl(currentPage + 1));
-            //updateCurrentPage(currentPage + 1);
           }}
           onPreviousClick={() => {
             history.push(buildUrl(currentPage - 1));
-            //updateCurrentPage(currentPage - 1);
           }}
           onPageClick={(selectPageNumber) => {
             history.push(buildUrl(selectPageNumber));
-            //updateCurrentPage(selectPageNumber);
           }}
           isLoading={!isLoaded}
         />
