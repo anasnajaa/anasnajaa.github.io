@@ -3,6 +3,7 @@ layout: post
 title: "Sidewalk Water Cooler"
 date: 2022-07-21 20:00:00 +0300
 categories: memories
+author: Anas Najaa
 ---
 
 Disclaimer: this article is like a scented candle, it is meant to trigger certain kinds of emotions. You might not relate to it, or get the point of it, but that doesn't mean others will not too. Since it is Eid, I wanted to light up this memory candle hoping that its smell will evoke nostalgic memories, gratefulness, doubt, bliss, and other emotions that we don't feel as strongly as we used to or we don't even come by as frequently if not at all.

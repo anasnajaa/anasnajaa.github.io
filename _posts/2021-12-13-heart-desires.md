@@ -3,9 +3,7 @@ layout: post
 title: "Heart Desires"
 date: 2021-12-13 20:00:00 +0300
 categories: emotions struggle
-author:
-    name: Anas Najaa
-    email: "anas@najaa.org"
+author: Anas Najaa
 ---
 
 This is a post about the daily struggle of someone trying to hold on to his values no matter what.

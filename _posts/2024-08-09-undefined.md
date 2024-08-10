@@ -3,6 +3,7 @@ layout: post
 title: "Undefined"
 date: 2024-08-09 20:54:00 +0300
 categories: taoism void
+author: Anas Najaa
 ---
 
 The ability to have constant core values that stand against change is not easy. Holding on these constants renders you undefined with time. As the world moves on and forgets itself and as the narrative is lost to time, you risk being a driftwood in an ocean of unknown.
