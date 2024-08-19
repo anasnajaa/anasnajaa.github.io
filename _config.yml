@@ -24,6 +24,7 @@ url: "https://blog.anas.najaa.org" # the base hostname & protocol for your site,
 github_username: anasnajaa
 google_analytics: G-13QRFBM8TT
 show_excerpts: true
+cdn_url: https://d2ch52pto83ayv.cloudfront.net
 
 # Build settings
 theme: minima
