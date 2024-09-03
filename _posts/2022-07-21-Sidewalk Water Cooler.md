@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Sidewalk Water Cooler"
-date: 2022-07-21 20:00:00 +0300
 categories: memories
 author: Anas Najaa
 ---

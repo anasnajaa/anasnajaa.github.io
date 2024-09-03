@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Heart Desires"
-date: 2021-12-13 20:00:00 +0300
 categories: emotions struggle
 author: Anas Najaa
 ---

@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Undefined"
-date: 2024-08-09 20:54:00 +0300
 categories: taoism void
 author: Anas Najaa
 ---
